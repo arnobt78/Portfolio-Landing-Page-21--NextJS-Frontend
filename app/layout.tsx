@@ -159,7 +159,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
-  manifest: "/site.webmanifest",
+  manifest: "/manifest.webmanifest",
   verification: {
     google: "your-google-verification-code", // Replace with your Google verification code
   },
