@@ -6,9 +6,9 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.18-38bdf8)](https://tailwindcss.com/)
 
-- **Live Demo:** [https://portfolio-ui-21.vercel.app/](https://portfolio-ui-21.vercel.app/)
+A **full-featured portfolio and landing page** built with the Next.js App Router, TypeScript, and Tailwind CSS. It serves as both a production-ready demo and an **educational reference** for building modern React applications—featuring SEO metadata, dark/light theme, contact form integration (Formspree), blog and project showcases, and a rich set of reusable UI components. Use it to learn patterns, copy components into your own projects, or deploy it as your own portfolio.
 
-This repository is a **full-featured portfolio and landing page** built with the Next.js App Router, TypeScript, and Tailwind CSS. It serves as both a production-ready demo and an **educational reference** for building modern React applications—featuring SEO metadata, dark/light theme, contact form integration (Formspree), blog and project showcases, and a rich set of reusable UI components. Use it to learn patterns, copy components into your own projects, or deploy it as your own portfolio.
+- **Live Demo:** [https://portfolio-ui-21.vercel.app/](https://portfolio-ui-21.vercel.app/)
 
 ---
 
@@ -39,18 +39,18 @@ Portfolio UI 21 is a **frontend-only** application. It has no custom backend; da
 
 ## Tech Stack & Keywords
 
-| Category | Technologies |
-|----------|--------------|
-| **Framework** | Next.js 16 (App Router), React 19 |
-| **Language** | TypeScript 5.9 |
-| **Styling** | Tailwind CSS 3.4, CSS variables (theming) |
+| Category          | Technologies                               |
+| ----------------- | ------------------------------------------ |
+| **Framework**     | Next.js 16 (App Router), React 19          |
+| **Language**      | TypeScript 5.9                             |
+| **Styling**       | Tailwind CSS 3.4, CSS variables (theming)  |
 | **UI Primitives** | Radix UI, Base UI, Shadcn-style components |
-| **Animation** | Framer Motion, Motion |
-| **Forms** | React Hook Form, Zod, Formspree (contact) |
-| **Data & State** | TanStack React Query, local data in `lib/` |
-| **3D (optional)** | Three.js, React Three Fiber, Drei |
-| **Icons** | Lucide React, React Icons |
-| **Fonts** | Next.js Google Fonts (Outfit) |
+| **Animation**     | Framer Motion, Motion                      |
+| **Forms**         | React Hook Form, Zod, Formspree (contact)  |
+| **Data & State**  | TanStack React Query, local data in `lib/` |
+| **3D (optional)** | Three.js, React Three Fiber, Drei          |
+| **Icons**         | Lucide React, React Icons                  |
+| **Fonts**         | Next.js Google Fonts (Outfit)              |
 
 **Keywords:** portfolio, landing page, Next.js, React, TypeScript, Tailwind CSS, fullstack developer, SEO, dark mode, Formspree, App Router, Radix UI, Framer Motion, blog, projects showcase, contact form, Vercel.
 
@@ -113,10 +113,10 @@ This project uses **very few** environment variables. The app works out of the b
 
 Create a file named `.env.local` in the project root (it is git-ignored). No `.env` file is required for the default demo.
 
-| Variable | Required | Description | Default / Note |
-|----------|----------|-------------|----------------|
-| `NEXT_PUBLIC_SITE_URL` | No | Canonical base URL for sitemap, robots, and Open Graph. | Falls back to `https://portfolio-ui-21.vercel.app` if unset. |
-| `VERCEL_ENV` | No (set by Vercel) | `production` \| `preview` \| `development`. Used in `app/robots.ts` to block indexing on non-production. | Automatically set by Vercel on deploy. |
+| Variable               | Required           | Description                                                                                              | Default / Note                                               |
+| ---------------------- | ------------------ | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| `NEXT_PUBLIC_SITE_URL` | No                 | Canonical base URL for sitemap, robots, and Open Graph.                                                  | Falls back to `https://portfolio-ui-21.vercel.app` if unset. |
+| `VERCEL_ENV`           | No (set by Vercel) | `production` \| `preview` \| `development`. Used in `app/robots.ts` to block indexing on non-production. | Automatically set by Vercel on deploy.                       |
 
 ### Example `.env.local`
 
@@ -143,7 +143,7 @@ There are **no other backend or API keys** required for the core demo.
 
 ## Project Structure
 
-```
+```bash
 portfolio-ui-21/
 ├── app/                    # Next.js App Router
 │   ├── layout.tsx         # Root layout, metadata, fonts, providers
@@ -203,17 +203,17 @@ portfolio-ui-21/
 
 ## Routes & Pages
 
-| Route | Type | Description |
-|-------|------|-------------|
-| `/` | Static | Home: Hero, About, Services preview, MyStack, Experience, FAQ, Testimonials |
-| `/blog` | Static | Blog listing from `lib/blogData.ts` |
-| `/blog/[id]` | Dynamic | Single blog post; metadata and JSON-LD for SEO |
-| `/projects` | Static | Projects grid and filters from `lib/projectsData.ts` |
-| `/services` | Static | Services cards and process steps from `lib/servicesData.ts` |
-| `/contact` | Static | Contact form (Formspree) and contact info |
-| `/admin-portfolio` | Static | Demo admin/dashboard UI (no real backend) |
-| `/robots.txt` | Dynamic | Generated by `app/robots.ts` (env-aware) |
-| `/sitemap.xml` | Dynamic | Generated by `app/sitemap.ts` |
+| Route              | Type    | Description                                                                 |
+| ------------------ | ------- | --------------------------------------------------------------------------- |
+| `/`                | Static  | Home: Hero, About, Services preview, MyStack, Experience, FAQ, Testimonials |
+| `/blog`            | Static  | Blog listing from `lib/blogData.ts`                                         |
+| `/blog/[id]`       | Dynamic | Single blog post; metadata and JSON-LD for SEO                              |
+| `/projects`        | Static  | Projects grid and filters from `lib/projectsData.ts`                        |
+| `/services`        | Static  | Services cards and process steps from `lib/servicesData.ts`                 |
+| `/contact`         | Static  | Contact form (Formspree) and contact info                                   |
+| `/admin-portfolio` | Static  | Demo admin/dashboard UI (no real backend)                                   |
+| `/robots.txt`      | Dynamic | Generated by `app/robots.ts` (env-aware)                                    |
+| `/sitemap.xml`     | Dynamic | Generated by `app/sitemap.ts`                                               |
 
 All pages use the root `layout.tsx` (Navigation + main + Footer). Metadata is set in `app/layout.tsx` (site-wide) and in `lib/metaData.ts` or per-page `export const metadata` for SEO.
 
@@ -363,13 +363,13 @@ Or use an env variable, e.g. `process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT`.
 
 ## Scripts
 
-| Command | Description |
-|--------|-------------|
-| `npm run dev` | Start development server (default port 3000) |
-| `npm run build` | Production build (suppresses Node type-stripping warning) |
-| `npm start` | Run production server after `build` |
-| `npm run lint` | ESLint on `app`, `components`, `lib`, `hooks` |
-| `npm run type-check` | `tsc --noEmit` |
+| Command              | Description                                               |
+| -------------------- | --------------------------------------------------------- |
+| `npm run dev`        | Start development server (default port 3000)              |
+| `npm run build`      | Production build (suppresses Node type-stripping warning) |
+| `npm start`          | Run production server after `build`                       |
+| `npm run lint`       | ESLint on `app`, `components`, `lib`, `hooks`             |
+| `npm run type-check` | `tsc --noEmit`                                            |
 
 ---
 
