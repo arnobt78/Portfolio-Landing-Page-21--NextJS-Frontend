@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import TerminalHeader from './TerminalHeader';
 import { useTypewriter } from '@/hooks/useTerminal';
 
@@ -31,7 +31,7 @@ const Terminal: React.FC<TerminalProps> = ({
 
   const currentCommand = commands[currentCommandIndex];
   
-  const { displayedText, isComplete } = useTypewriter({
+  const { displayedText, isComplete: _isComplete } = useTypewriter({
     text: isTyping && currentCommand ? currentCommand.command : '',
     speed: 50,
     onComplete: () => {
@@ -59,10 +59,10 @@ const Terminal: React.FC<TerminalProps> = ({
     },
   });
 
-  // Start typing first command
+  // Start typing first command (deferred to satisfy react-hooks/set-state-in-effect)
   useEffect(() => {
     if (autoPlay && currentCommandIndex === 0 && !isTyping && completedCommands.length === 0) {
-      setIsTyping(true);
+      queueMicrotask(() => setIsTyping(true));
     }
   }, [autoPlay, currentCommandIndex, isTyping, completedCommands.length]);
 

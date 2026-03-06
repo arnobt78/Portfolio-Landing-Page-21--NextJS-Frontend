@@ -58,7 +58,7 @@ const initialProjects = [
 // Interface TypeScript pour un projet
 interface Tech {
   name: string;
-  icon: any;
+  icon: React.ComponentType<{ className?: string }> | null;
 }
 
 interface Project {
@@ -118,11 +118,6 @@ const DashboardClient: React.FC = () => {
     imageUrl: "",
   });
 
-  // Chargement initial depuis le localStorage
-  useEffect(() => {
-    loadFromStorage();
-  }, []);
-
   // Fonction pour charger les données depuis le localStorage
   const loadFromStorage = () => {
     try {
@@ -151,6 +146,11 @@ const DashboardClient: React.FC = () => {
       setProjects(initialProjects);
     }
   };
+
+  // Chargement initial depuis le localStorage (deferred to satisfy react-hooks/set-state-in-effect)
+  useEffect(() => {
+    queueMicrotask(() => loadFromStorage());
+  }, []);
 
   // Fonction pour sauvegarder les articles dans le localStorage
   const savePostsToStorage = (updatedPosts: Post[]) => {

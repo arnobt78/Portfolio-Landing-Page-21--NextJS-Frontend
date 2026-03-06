@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import AboutCodeBlock from '../mvpblocks/AboutCodeBlock';
 import GridBackground from "@/components/ui/GridBackground";
 
+/** About section on home: heading + AboutCodeBlock (code-style intro). */
 const AboutMe = () => (
     <section className="py-24 bg-background relative overflow-hidden">
         {/* Background Elements */}

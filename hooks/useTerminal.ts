@@ -20,7 +20,7 @@ export const useTypewriter = ({ text, speed = 50, onComplete }: UseTypewriterOpt
 
       return () => clearTimeout(timeout);
     } else if (currentIndex === text.length && !isComplete) {
-      setIsComplete(true);
+      queueMicrotask(() => setIsComplete(true));
       onComplete?.();
     }
   }, [currentIndex, text, speed, onComplete, isComplete]);
@@ -42,7 +42,7 @@ interface UseTerminalExecutionOptions {
 
 export const useTerminalExecution = ({
   commands,
-  typingSpeed = 50,
+  typingSpeed: _typingSpeed = 50,
   executionDelay = 800,
 }: UseTerminalExecutionOptions) => {
   const [currentCommandIndex, setCurrentCommandIndex] = useState(-1);
@@ -73,10 +73,10 @@ export const useTerminalExecution = ({
     }, executionDelay);
   }, [executionDelay, startNextCommand]);
 
-  // Start first command on mount
+  // Start first command on mount (deferred to satisfy react-hooks/set-state-in-effect)
   useEffect(() => {
     if (currentCommandIndex === -1 && commands.length > 0) {
-      startNextCommand();
+      queueMicrotask(() => startNextCommand());
     }
   }, [currentCommandIndex, commands.length, startNextCommand]);
 

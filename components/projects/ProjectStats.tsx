@@ -38,7 +38,7 @@ export function ProjectStats({
 
   return (
     <div className="grid grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
-      {stats.map((stat, index) => {
+      {stats.map((stat, _index) => {
         const Icon = stat.icon;
         return (
           <motion.div

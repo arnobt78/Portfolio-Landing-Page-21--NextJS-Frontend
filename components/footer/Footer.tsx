@@ -13,10 +13,11 @@ import {
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
+/** Site footer: quick links, social links, CTA block, copyright. Update quickLinks/socialLinks for your site. */
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // Navigation links
+  // Quick links mirror main nav; keep in sync with navigationRoutes or derive from it
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "Projects", href: "/projects" },
@@ -25,7 +26,7 @@ const Footer = () => {
     { name: "Contact", href: "/contact" },
   ];
 
-  // Social links
+  // Social icons and URLs; update hrefs for your profiles
   const socialLinks = [
     {
       name: "GitHub",
@@ -175,10 +176,10 @@ const Footer = () => {
                   className="space-y-4"
                 >
                   <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
-                    Let's Work Together
+                    Let&apos;s Work Together
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    Have a project in mind? Let's build something amazing
+                    Have a project in mind? Let&apos;s build something amazing
                     together.
                   </p>
                   <Link

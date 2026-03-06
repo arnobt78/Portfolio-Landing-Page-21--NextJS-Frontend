@@ -1,12 +1,16 @@
 import { MetadataRoute } from "next";
 
-// Assurez-vous que cette URL correspond à votre domaine final
+// Base URL for sitemap reference; override via NEXT_PUBLIC_SITE_URL when deploying to your domain
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio-ui-21.vercel.app";
 
+/**
+ * Dynamic robots.txt: blocks all crawlers on non-production (e.g. Vercel previews);
+ * in production, allows search engines but disallows AI crawlers and sensitive paths (admin, api, contact, etc.).
+ */
 export default function robots(): MetadataRoute.Robots {
-  // Règle 1 : Pour les environnements qui ne sont PAS la production
-  // (ex : les déploiements de test sur Vercel)
+  // Rule 1: non-production (e.g. Vercel preview) — disallow all indexing
+  // (ex: les déploiements de test sur Vercel)
   // On bloque TOUT pour éviter que Google n'indexe des versions de test.
   if (process.env.VERCEL_ENV !== "production") {
     return {

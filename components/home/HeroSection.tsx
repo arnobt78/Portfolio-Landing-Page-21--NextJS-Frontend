@@ -9,9 +9,8 @@ import {
 } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
-import { FaWhatsapp, FaReact, FaJava, FaGitAlt } from "react-icons/fa";
+import { FaWhatsapp, FaReact, FaGitAlt } from "react-icons/fa";
 import {
-  SiSpringboot,
   SiTypescript,
   SiNextdotjs,
   SiJavascript,
@@ -21,13 +20,14 @@ import {
 import { TypeAnimation } from "react-type-animation";
 import GridBackground from "@/components/ui/GridBackground";
 
-// --- Data Configuration --- //
+/** Social link item: name, url, and icon component for footer/hero */
 interface SocialLink {
   name: string;
   url: string;
   icon: React.ElementType;
 }
 
+/** CTA in hero: label, link, style variant, optional icon and download attribute */
 interface ActionButton {
   text: string;
   url: string;
@@ -36,6 +36,7 @@ interface ActionButton {
   downloadName?: string;
 }
 
+/** Links shown in hero (GitHub, LinkedIn, WhatsApp, Email); update URLs for your profile */
 const socialLinks: SocialLink[] = [
   { name: "GitHub", url: "https://google.com", icon: Github },
   {
@@ -56,14 +57,14 @@ const actionButtons: ActionButton[] = [
   },
   {
     text: "Download CV",
-    url: "/cv/johndoe.pdf",
+    url: "/cv/demo.pdf",
     variant: "outline",
     icon: Download,
-    downloadName: "johndoe.pdf",
+    downloadName: "demo.pdf",
   },
 ];
 
-// --- Dynamic Decorative Icons Data --- //
+/** Floating tech icons in hero: icon component, size, color, position, and Framer Motion animation config */
 interface DynamicIcon {
   icon: React.ElementType;
   size: number;
@@ -238,7 +239,10 @@ const HeroSection = () => {
 
         {/* Dynamic Decorative Icons */}
         {dynamicIcons.map((item, index) => {
-          const IconComponent = item.icon as any;
+          const IconComponent = item.icon as React.ComponentType<{
+            size?: number;
+            style?: React.CSSProperties;
+          }>;
           return (
             <motion.div
               key={index}
@@ -268,7 +272,7 @@ const HeroSection = () => {
             variants={itemVariants}
             className="text-lg font-medium text-primary mb-2 title1"
           >
-            Hi, I'm John Doe
+            Hi, I&apos;m John Doe
           </motion.p>
 
           <motion.h1
@@ -309,7 +313,9 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12"
           >
             {actionButtons.map((btn) => {
-              const BtnIcon = btn.icon as any;
+              const BtnIcon = btn.icon as React.ComponentType<{
+                className?: string;
+              }>;
               return (
                 <Button
                   key={btn.text}
@@ -342,7 +348,9 @@ const HeroSection = () => {
             className="flex justify-center items-center gap-6"
           >
             {socialLinks.map((link) => {
-              const LinkIcon = link.icon as any;
+              const LinkIcon = link.icon as React.ComponentType<{
+                className?: string;
+              }>;
               return (
                 <a
                   key={link.name}

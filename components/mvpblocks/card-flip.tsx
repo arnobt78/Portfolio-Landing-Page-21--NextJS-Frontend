@@ -12,7 +12,7 @@
 
 import { cn } from '@/lib/utils';
 import { ArrowRight, Code2, Copy, Rocket, Zap } from 'lucide-react';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 export interface CardFlipProps {
   title?: string;
@@ -33,6 +33,16 @@ export default function CardFlip({
   ],
 }: CardFlipProps) {
   const [isFlipped, setIsFlipped] = useState(false);
+  // Deterministic widths per index to avoid Math.random() during render (purity rule)
+  const codeBlockStyles = useMemo(
+    () =>
+      [...Array(6)].map((_, i) => ({
+        width: `${60 + (i * 11) % 41}%`,
+        marginLeft: `${(i * 5) % 21}%`,
+        animationDelay: `${i * 0.2}s`,
+      })),
+    [],
+  );
 
   return (
     <div
@@ -73,7 +83,7 @@ export default function CardFlip({
           <div className="absolute inset-0 flex items-center justify-center pt-20">
             <div className="relative flex h-[100px] w-[200px] flex-col items-center justify-center gap-2">
               {/* Code blocks animation */}
-              {[...Array(6)].map((_, i) => (
+              {codeBlockStyles.map((style, i) => (
                 <div
                   key={i}
                   className={cn(
@@ -83,9 +93,9 @@ export default function CardFlip({
                     'opacity-0',
                   )}
                   style={{
-                    width: `${60 + Math.random() * 40}%`,
-                    animationDelay: `${i * 0.2}s`,
-                    marginLeft: `${Math.random() * 20}%`,
+                    width: style.width,
+                    animationDelay: style.animationDelay,
+                    marginLeft: style.marginLeft,
                   }}
                 />
               ))}

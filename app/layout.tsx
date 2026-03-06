@@ -6,31 +6,44 @@ import Navigation from "@/components/home/navigation";
 import Footer from "@/components/footer/Footer";
 import React from "react";
 
+/** Google font (Outfit) loaded via next/font; CSS variable --font-outfit used in Tailwind */
 const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-outfit",
 });
 
+/** Central config for site title, URL, OG image; used by metadata and SEO */
 const siteConfig = {
-  title: "John Doe - Fullstack Developer",
+  title: "John Doe's Portfolio",
+  defaultTitle: "John Doe - Fullstack Developer",
   description:
-    "I am John, a fullstack developer specialized in creating performant web applications with TypeScript, Next.js and NestJS. Let's build something amazing together.",
+    "John Doe's portfolio — fullstack developer specializing in performant web applications with TypeScript, Next.js and NestJS. Demo showcase by Arnob Mahmud.",
   author: "John Doe",
-  url: "https://portfolio-ui-21.vercel.app", // Replace with your domain
+  /** Project author / maintainer (SEO). Contact: contact@arnobmahmud.com */
+  projectAuthor: {
+    name: "Arnob Mahmud",
+    url: "https://www.arnobmahmud.com",
+  },
+  url: "https://portfolio-ui-21.vercel.app",
   ogImage: "/og-image.png",
 };
 
+/** Root metadata: SEO, Open Graph, Twitter cards, icons, robots. Affects all pages unless overridden. */
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
-    template: `%s | John Doe`,
+    template: `%s | John Doe's Portfolio`,
   },
   description: siteConfig.description,
-  authors: [{ name: siteConfig.author, url: siteConfig.url }],
+  authors: [
+    { name: siteConfig.author, url: siteConfig.url },
+    { name: siteConfig.projectAuthor.name, url: siteConfig.projectAuthor.url },
+  ],
   creator: siteConfig.author,
   publisher: siteConfig.author,
+  applicationName: "John Doe's Portfolio",
   keywords: [
     // --- English Keywords ---
     // Roles & Titles
@@ -112,7 +125,7 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     title: siteConfig.title,
     description: siteConfig.description,
-    siteName: "John Doe Portfolio",
+    siteName: "John Doe's Portfolio",
     images: [
       {
         url: siteConfig.ogImage,
@@ -142,9 +155,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/og-image.png",
-    shortcut: "/og-image.png",
-    apple: "/og-image.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   manifest: "/site.webmanifest",
   verification: {
@@ -160,6 +173,7 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
+/** Viewport theme color for browser UI (e.g. mobile address bar) in light/dark mode */
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
@@ -167,6 +181,7 @@ export const viewport: Viewport = {
   ],
 };
 
+/** Root layout: wraps every page with font, providers, nav, main content area, and footer */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -181,7 +196,6 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <title></title>
       </head>
       <body
         className={`${outfit.variable} font-sans antialiased`}

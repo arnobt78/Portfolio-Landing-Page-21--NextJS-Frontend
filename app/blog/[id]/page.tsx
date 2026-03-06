@@ -12,6 +12,7 @@ type Props = {
   params: Promise<{ id: string }>;
 };
 
+/** Generates per-post metadata and Open Graph for SEO; used by Next.js for <head> and social previews */
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata,
@@ -27,8 +28,8 @@ export async function generateMetadata(
   }
 
   const siteUrl =
-    (await parent).metadataBase?.toString() || "https://your-domain.com";
-  const postUrl = `${siteUrl}blog/${post.id}`;
+    (await parent).metadataBase?.toString() || "https://portfolio-ui-21.vercel.app";
+  const postUrl = `${siteUrl.replace(/\/$/, "")}/blog/${post.id}`;
   const imageUrl = post.image
     ? `${siteUrl}${post.image}`
     : `${siteUrl}/og-image.png`;
@@ -66,6 +67,7 @@ export async function generateMetadata(
   };
 }
 
+/** Dynamic blog post page: looks up post by id from mockPosts, renders content and JSON-LD for SEO */
 const BlogPostPage = async ({ params }: Props) => {
   const { id } = await params;
   const post = mockPosts.find((p) => p.id === Number(id));
@@ -74,6 +76,7 @@ const BlogPostPage = async ({ params }: Props) => {
     notFound();
   }
 
+  /** Locale date formatting for published date display */
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("fr-FR", {
       year: "numeric",
@@ -82,12 +85,13 @@ const BlogPostPage = async ({ params }: Props) => {
     });
   };
 
-  const siteUrl = "https://your-domain.com"; // Replace with your domain
+  const siteUrl = "https://portfolio-ui-21.vercel.app";
   const postUrl = `${siteUrl}/blog/${post.id}`;
   const imageUrl = post.image
     ? `${siteUrl}${post.image}`
     : `${siteUrl}/og-image.png`;
 
+  /** Structured data for search engines (Google rich results); injected as script type="application/ld+json" */
   const jsonLd: object = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",

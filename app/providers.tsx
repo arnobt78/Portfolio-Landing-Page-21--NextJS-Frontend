@@ -7,7 +7,12 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import React, { useState } from "react";
 
+/**
+ * Global providers wrapper: React Query (server state), Theme (dark/light), Tooltip context, and toast notifications.
+ * Order matters: outer providers are available to inner ones.
+ */
 export function Providers({ children }: { children: React.ReactNode }) {
+  /** Single QueryClient instance per app; useState ensures it's stable across re-renders */
   const [queryClient] = useState(
     () =>
       new QueryClient({

@@ -1,7 +1,7 @@
 {
-  "name": "John Doe - Fullstack Developer",
+  "name": "John Doe's Portfolio",
   "short_name": "John Doe",
-  "description": "Fullstack developer portfolio - TypeScript, Next.js, NestJS",
+  "description": "John Doe's portfolio — fullstack developer. TypeScript, Next.js, NestJS. Demo by Arnob Mahmud.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",

@@ -1,5 +1,9 @@
 import { MetadataRoute } from "next";
 
+/**
+ * Dynamic sitemap.xml for SEO. Search engines use this to discover and prioritize pages.
+ * Update baseUrl when deploying to your own domain; consider using NEXT_PUBLIC_SITE_URL.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://portfolio-ui-21.vercel.app"; // Replace with actual domain
 

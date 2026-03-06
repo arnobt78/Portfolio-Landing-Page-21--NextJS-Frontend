@@ -1,6 +1,5 @@
 import { FaJava, FaReact } from "react-icons/fa";
 import { SiSpring, SiTailwindcss, SiTypescript, SiPostgresql } from "react-icons/si";
-import { IconType } from "react-icons";
 
 export const ICONS = {
   react: FaReact,

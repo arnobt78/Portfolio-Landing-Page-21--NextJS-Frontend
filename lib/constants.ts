@@ -13,6 +13,7 @@ import {
   Twitter,
 } from "lucide-react";
 
+/** Profile and contact info used across the site (footer, about, contact sections, etc.) */
 export const PERSONAL_INFO = {
   name: "JohnDev",
   fullName: "Landry Simo",
@@ -28,6 +29,7 @@ export const PERSONAL_INFO = {
     "Je crée des expériences exceptionnelles qui allient performance, esthétique et innovation. Passionné par les technologies modernes et les interfaces utilisateur révolutionnaires.",
 };
 
+/** Skill list with level (0–100) and category for skills section / charts */
 export const SKILLS = [
   { name: "React/Next.js", level: 95, category: "frontend" as const },
   { name: "TypeScript", level: 92, category: "frontend" as const },
@@ -43,6 +45,7 @@ export const SKILLS = [
   { name: "Tailwind CSS", level: 90, category: "frontend" as const },
 ];
 
+/** Category-level skills with icon, level, color class, and technology list for visual blocks */
 export const BIG_SKILLS = [
   {
     name: "Frontend",

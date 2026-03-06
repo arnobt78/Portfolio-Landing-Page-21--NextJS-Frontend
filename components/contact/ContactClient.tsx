@@ -10,6 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { AppearOnScroll } from "@/components/ScrollEffects/ScrollEffect";
 import GridBackground from "@/components/ui/GridBackground";
 
+/** Contact page client: form (Formspree) + contact info cards. Used by app/contact/page.tsx. */
 const ContactClient = () => {
   const [formData, setFormData] = useState({
     name: "",

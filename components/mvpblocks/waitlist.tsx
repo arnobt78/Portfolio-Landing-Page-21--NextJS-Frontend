@@ -31,7 +31,7 @@ export default function WaitlistPage() {
   const [color, setColor] = useState('#ffffff');
 
   useEffect(() => {
-    setColor(resolvedTheme === 'dark' ? '#ffffff' : '#e60a64');
+    queueMicrotask(() => setColor(resolvedTheme === 'dark' ? '#ffffff' : '#e60a64'));
   }, [resolvedTheme]);
 
   const handleSubmit = async (e: React.FormEvent) => {

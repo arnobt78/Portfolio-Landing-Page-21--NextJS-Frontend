@@ -1,58 +1,81 @@
 import { Metadata } from "next";
 
+/** Project maintainer / SEO author info; used in page-level metadata */
+const siteAuthor = {
+  name: "Arnob Mahmud",
+  url: "https://www.arnobmahmud.com",
+  email: "contact@arnobmahmud.com",
+};
+
+/** Contact page SEO: title, description, keywords, authors. Import and assign to page metadata. */
 export const Metacontact: Metadata = {
-  title: "Contact - John | Spécialiste Systèmes Backend & Architecte Web",
+  title: "Contact - John Doe | Software Engineer",
   description:
-    "Contactez John pour des projets de développement web robustes, d'architecture système et de design UI/UX. Discutons de vos besoins et transformons votre vision en réalité.",
+    "John is a software engineer with a passion for building web applications and mobile applications.",
   keywords: [
     "contact",
-    "John",
-    "développeur web",
+    "John Doe",
+    "Software Engineer",
+    "Web Developer",
+    "Mobile Developer",
+    "Full-Stack Developer",
+    "Software Engineer",
+    "Web Developer",
+    "Mobile Developer",
     "Backend",
-    "architecture système",
-    "demande de projet",
-    "devis",
-    "Yaoundé",
-    "Cameroun",
+  ],
+  authors: [
+    { name: "John Doe", url: "https://portfolio-ui-21.vercel.app" },
+    { name: siteAuthor.name, url: siteAuthor.url },
   ],
 };
 
+/** Projects page SEO metadata; used by app/projects/page.tsx */
 export const MetaProjects: Metadata = {
-  title: "Projets - John Doe | Praticien DevSecOps & Ingénieur Logiciel",
+  title: "Projects - John Doe | Software Engineer",
   description:
-    "Explorez une sélection de projets de John Doe, démontrant une expertise en développement web, systèmes backend et solutions logicielles robustes. Spécialisé en Java/Spring Boot, React/Next.js, Cloud, Automatisation et Cybersécurité.",
+    "Explore a selection of projects by John Doe, demonstrating expertise in web development, backend systems, and robust software solutions. Specialized in Java/Spring Boot, React/Next.js, Cloud, Automation, and Cybersecurity.",
   keywords: [
     "John Doe",
     "projets",
-    "développement web",
-    "développement backend",
+    "Web development",
+    "Backend development",
     "Java",
     "React",
     "Next.js",
     "Spring Boot",
     "Cloud",
-    "Automatisation",
-    "Cybersécurité",
+    "Automation",
+    "Cybersecurity",
     "portfolio",
-    "ingénierie logicielle",
+    "Software engineering",
     "DevSecOps",
+  ],
+  authors: [
+    { name: "John Doe", url: "https://portfolio-ui-21.vercel.app" },
+    { name: siteAuthor.name, url: siteAuthor.url },
   ],
 };
 
+/** Services page SEO metadata; used by app/services/page.tsx */
 export const MetaServices: Metadata = {
-  title: "Services - John | Développement Backend & Architecture Système",
+  title: "Services - John Doe | Backend Development & System Architecture",
   description:
-    "Explorez mes services en développement de systèmes backend robustes, API sur mesure, applications mobiles/desktop, et solutions numériques complètes.",
+    "Explore my services in developing robust backend systems, custom APIs, mobile/desktop applications, and complete digital solutions.",
   keywords: [
     "services",
-    "développement backend",
-    "architecture système",
-    "API sur mesure",
+    "Development backend",
+    "System architecture",
+    "Custom API",
     "NestJS",
     "microservices",
-    "applications mobiles",
-    "logiciels desktop",
+    "Mobile applications",
+    "Desktop applications",
     "performance web",
-    "John",
+    "John Doe",
+  ],
+  authors: [
+    { name: "John Doe", url: "https://portfolio-ui-21.vercel.app" },
+    { name: siteAuthor.name, url: siteAuthor.url },
   ],
 };

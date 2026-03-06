@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Plus } from 'lucide-react';
 import { useState } from 'react';
 
+/** FAQ items: question + answer; edit here to change FAQ content */
 const faqs = [
   {
     question: 'What services do you offer?',

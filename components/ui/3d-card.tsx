@@ -35,12 +35,12 @@ export const CardContainer = ({
     containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
   };
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseEnter = (_e: React.MouseEvent<HTMLDivElement>) => {
     setIsMouseEntered(true);
     if (!containerRef.current) return;
   };
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseLeave = (_e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     setIsMouseEntered(false);
     containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
@@ -116,14 +116,10 @@ export const CardItem = ({
   rotateX?: number | string;
   rotateY?: number | string;
   rotateZ?: number | string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isMouseEntered] = useMouseEnter();
-
-  useEffect(() => {
-    handleAnimations();
-  }, [isMouseEntered]);
 
   const handleAnimations = () => {
     if (!ref.current) return;
@@ -134,8 +130,13 @@ export const CardItem = ({
     }
   };
 
-    const Component = Tag as any;
-    return (
+  useEffect(() => {
+    handleAnimations();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- handleAnimations depends on ref and isMouseEntered only
+  }, [isMouseEntered]);
+
+  const Component = Tag as React.ComponentType<React.PropsWithChildren<Record<string, unknown>>>;
+  return (
     <Component
       ref={ref}
       className={cn("w-fit transition duration-200 ease-linear", className)}

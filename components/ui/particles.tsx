@@ -126,14 +126,17 @@ export const Particles: React.FC<ParticlesProps> = ({
       }
       window.removeEventListener('resize', handleResize);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- animate, initCanvas stable
   }, [color]);
 
   useEffect(() => {
     onMouseMove();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- onMouseMove reads canvasRef/mousePosition
   }, [mousePosition.x, mousePosition.y]);
 
   useEffect(() => {
     initCanvas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- initCanvas recreated each render
   }, [refresh]);
 
   const initCanvas = () => {

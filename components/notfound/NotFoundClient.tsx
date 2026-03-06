@@ -31,11 +31,11 @@ const NotFoundClient = () => {
           Ressource non trouvée
         </h2>
         <p className="text-lg text-text-secondary mb-8">
-          L'URL demandée n'existe pas ou a été déplacée. Veuillez vérifier l'adresse ou revenir à une section valide du portfolio.
+          L&apos;URL demandée n&apos;existe pas ou a été déplacée. Veuillez vérifier l&apos;adresse ou revenir à une section valide du portfolio.
         </p>
           <Link href="/public">
           <Button size="lg" className="bg-gradient-primary hover:opacity-90 border-0 shadow-primary hover:shadow-glow transition-smooth group">
-            Retour à l'accueil
+            Retour à l&apos;accueil
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
         </Link>

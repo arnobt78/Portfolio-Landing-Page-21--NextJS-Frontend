@@ -8,9 +8,10 @@ import { MetaServices } from "@/lib/metaData";
 import { processSteps, services } from "@/lib/servicesData";
 import GridBackground from "@/components/ui/GridBackground";
 
-// --- STATIC METADATA ---
+// Page-level SEO for /services
 export const metadata: Metadata = MetaServices;
 
+/** Services route: expertise section, service cards, process steps, and CTA; data from lib/servicesData.ts */
 const ServicesPage = () => {
   return (
     <section className="py-20 bg-background relative overflow-hidden">
@@ -116,8 +117,8 @@ const ServicesPage = () => {
             Ready to Design Your Next Project?
           </h2>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-            Let's discuss your system requirements and craft the solution that
-            will bring your ideas to life.
+            Let&apos;s discuss your system requirements and craft the solution
+            that will bring your ideas to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

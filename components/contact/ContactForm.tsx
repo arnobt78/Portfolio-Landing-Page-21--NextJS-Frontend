@@ -17,6 +17,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { AppearOnScroll } from "@/components/ScrollEffects/ScrollEffect";
 
+/** Reusable contact form: name, email, subject, message. Submits to Formspree; shows toast on success/error. */
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -27,12 +28,13 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  /** POST to Formspree; _replyto and _subject set for email threading. Replace URL with your Formspree form ID. */
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Note: The Formspree endpoint remains the same as it's a target URL.
+      // Formspree form endpoint; replace with your form ID for production
       const response = await fetch("https://formspree.io/f/myzbqrro", {
         method: "POST",
         headers: {
@@ -125,8 +127,8 @@ const ContactForm = () => {
             </h1>
             <p className="text-text-secondary text-lg max-w-2xl mx-auto">
               Do you have a project requiring a solid **Backend architecture**?
-              Let's discuss the technical specifications and build a reliable
-              system together.
+              Let&apos;s discuss the technical specifications and build a
+              reliable system together.
             </p>
           </div>
 

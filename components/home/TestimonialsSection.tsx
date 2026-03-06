@@ -31,7 +31,7 @@ export interface TestimonialCardProps {
   img?: string;
   description: React.ReactNode;
   className?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export function TestimonialCard({
@@ -104,7 +104,7 @@ const testimonials = [
       <p>
         Working with John was a game-changer.
         <Highlight>
-          He doesn't just write code; he thinks about the product.
+          He doesn&apos;t just write code; he thinks about the product.
         </Highlight>{" "}
         His insights on architecture saved us from major technical debt.
       </p>
@@ -130,7 +130,7 @@ const testimonials = [
     img: "https://randomuser.me/api/portraits/men/22.jpg",
     description: (
       <p>
-        John's expertise in React and Next.js is top-tier.
+        John&apos;s expertise in React and Next.js is top-tier.
         <Highlight>
           The performance optimization he applied to our platform
         </Highlight>{" "}
@@ -213,7 +213,7 @@ const testimonials = [
     img: "https://randomuser.me/api/portraits/women/33.jpg",
     description: (
       <p>
-        It's a pleasure testing his releases.
+        It&apos;s a pleasure testing his releases.
         <Highlight>His code is clean, well-tested, and reliable.</Highlight> The
         number of bugs we find is consistently lower than with other devs.
       </p>

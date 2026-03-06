@@ -2,7 +2,6 @@
 
 import {useMemo, useState} from "react";
 import {motion} from "framer-motion";
-// Helper import that was missing
 import {Project, projectCategories, ProjectCategory} from "@/lib/projet";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
@@ -16,6 +15,7 @@ import {ProjectStats} from "@/components/projects/ProjectStats";
 import {ImageLightbox} from "@/components/ui/ImageLightbox";
 import GridBackground from "@/components/ui/GridBackground";
 
+/** Filter buttons: label, category value, and icon for the filter bar */
 const filterConfig: { name: string; category: ProjectCategory; icon: IconType }[] = [
   { name: "Tous", category: "all", icon: Code },
   { name: "Web", category: "web", icon: Globe },
@@ -25,6 +25,7 @@ const filterConfig: { name: string; category: ProjectCategory; icon: IconType }[
 
 const PROJECTS_PER_PAGE = 15;
 
+/** Projects page client: search, category filter, pagination, project cards, modal detail, and image lightbox */
 export default function ProjectsClient() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>("all");
@@ -32,7 +33,7 @@ export default function ProjectsClient() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // Calculate stats
+  // Unique tech count and category count for stats display
   const totalTechnologies = useMemo(() => {
     const uniqueTechs = new Set(
       projectsData.flatMap((project) => project.tech.map((t) => t.name))

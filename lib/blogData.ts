@@ -1,3 +1,4 @@
+/** Shape of a blog post; used by blog listing and dynamic post page + generateMetadata */
 export interface BlogPost {
   id: number;
   title: string;
@@ -11,6 +12,7 @@ export interface BlogPost {
   readingTime?: number; // Estimated reading time in minutes
 }
 
+/** Static blog data; replace with CMS or API in production */
 export const mockPosts: BlogPost[] = [
   {
     id: 1,

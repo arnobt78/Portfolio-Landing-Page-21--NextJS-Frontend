@@ -9,7 +9,7 @@ type FadeInSectionProps = {
   delay?: number;
 };
 
-
+/** Scale + fade in when section enters viewport; use for headings or emphasis blocks */
 export function ScaleTextEffect({ children, delay = 0 }: FadeInSectionProps) {
   return (
     <motion.div
@@ -27,6 +27,7 @@ export function ScaleTextEffect({ children, delay = 0 }: FadeInSectionProps) {
   );
 }
 
+/** Fade in and slide up when in view; once: true so animation runs only once */
 export function FadeInSection({ children, delay = 0 }: FadeInSectionProps) {
   return (
     <motion.div
@@ -90,6 +91,7 @@ type AppearOnScrollProps = {
   threshold?: number;
 };
 
+/** Wrapper that triggers children when they enter viewport (intersection observer); optional threshold. */
 export function AppearOnScroll({ children, threshold = 0.3 }: AppearOnScrollProps) {
   const [ref, inView] = useInViewFromReactIntersectionObserver({
     triggerOnce: false, // l'animation ce joue un seule fois

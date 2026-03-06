@@ -3,7 +3,7 @@
 import { Project } from "@/lib/projet";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ExternalLink, Code2, Eye } from "lucide-react";
+import { Code2, Eye } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -19,7 +19,7 @@ export function ProjectCard({
   project,
   index,
   onViewDetails,
-  onImageClick,
+  onImageClick: _onImageClick,
 }: ProjectCardProps) {
   return (
     <motion.div

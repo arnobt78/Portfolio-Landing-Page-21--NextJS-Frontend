@@ -16,7 +16,7 @@ const BentoGridItem = ({
   description,
   icon,
   className,
-  size = 'small',
+  size: _size = "small",
 }: BentoGridItemProps) => {
   const variants = {
     hidden: { opacity: 0, y: 20 },

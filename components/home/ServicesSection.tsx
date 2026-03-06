@@ -6,6 +6,7 @@ import {AppearOnScroll, ScaleTextEffect} from "@/components/ScrollEffects/Scroll
 import GridBackground from "@/components/ui/GridBackground";
 import React from "react";
 
+/** Props for a single service card in the bento-style grid */
 interface BentoGridItemProps {
   title: string;
   description: string;

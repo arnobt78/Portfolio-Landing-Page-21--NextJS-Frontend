@@ -1,13 +1,16 @@
 import { IconType } from "react-icons";
 
+/** Filter categories for projects page; "all" means no filter */
 export const projectCategories = ["all", "web", "backend", "mobile"] as const;
 export type ProjectCategory = typeof projectCategories[number];
 
+/** Tech stack item with name and react-icons IconType for project cards */
 export interface Tech {
   name: string;
   icon: IconType; // Uses IconType directly
 }
 
+/** Full project model: used by projectsData and ProjectCard/ProjectModal */
 export interface Project {
   id: string;
   title: string;

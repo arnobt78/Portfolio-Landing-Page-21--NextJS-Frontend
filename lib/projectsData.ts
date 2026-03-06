@@ -11,8 +11,10 @@ import {
 } from "react-icons/si";
 import { RiNextjsFill, RiRemixiconFill } from "react-icons/ri";
 
+/** Base path for project images in public; adjust if you move assets */
 const PROJECT_IMAGE_BASE_PATH = "/projects img/";
 
+/** Project list for /projects page; filterable by category in ProjectsClient */
 export const projectsData: Project[] = [
   {
     id: "proj-shopdo",

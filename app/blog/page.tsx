@@ -26,9 +26,15 @@ export const metadata: Metadata = {
     "Cybersécurité",
     "Automatisation",
   ],
+  authors: [
+    { name: "John Doe", url: "https://portfolio-ui-21.vercel.app" },
+    { name: "Arnob Mahmud", url: "https://www.arnobmahmud.com" },
+  ],
 };
 
+/** Blog listing page: renders cards from lib/blogData (mockPosts). Each card links to /blog/[id]. */
 const BlogPage = () => {
+  /** Formats ISO date string for display (e.g. locale fr-FR) */
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("fr-FR", {
       year: "numeric",

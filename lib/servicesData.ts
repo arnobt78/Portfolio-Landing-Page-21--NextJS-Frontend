@@ -1,5 +1,6 @@
 import {Code, Database, Globe, Monitor, Palette, Smartphone} from "lucide-react";
 
+/** Service offerings for home ServicesSection and /services page; each has icon, features, price text */
 export const services = [
     {
         icon: Database,
@@ -63,6 +64,7 @@ export const services = [
     },
 ];
 
+/** Workflow steps shown on /services page (e.g. Consultation, Design, Development, Delivery) */
 export const processSteps = [
     {
         step: "01",
@@ -88,7 +90,7 @@ export const processSteps = [
 
 
 export const ServicesSectionData = () => {
-  const services = [
+  const _services = [
     {
       icon: Database,
       title: "Backend Solutions",

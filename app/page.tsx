@@ -7,6 +7,7 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import FaqSection from "@/components/faq/FaqSection";
 // import ContactForm from "@/components/contact/ContactForm";
 
+/** Home page: composes hero, about, services preview, stack, experience, FAQ, and testimonials in order */
 export default function HomePage() {
   return (
       <>

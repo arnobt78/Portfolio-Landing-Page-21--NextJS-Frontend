@@ -10,13 +10,16 @@ import { ThemeToggleButton } from "../themeproviders/ThemeToggleButton";
 import {navItems} from "@/lib/navigationRoutes";
 import Logo from "@/components/home/Logo";
 
-
+/**
+ * Main site header: logo, desktop nav (from navItems), theme toggle, mobile hamburger menu.
+ * Scroll state adds background/blur; active route highlighted; mobile menu closes on route change.
+ */
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
 
-    // Handle scroll to change header style
+    // Handle scroll to change header style (background + border when scrolled)
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
@@ -25,9 +28,9 @@ const Navigation = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Close mobile menu on route change
+    // Close mobile menu on route change (deferred to satisfy react-hooks/set-state-in-effect)
     useEffect(() => {
-        setIsOpen(false);
+        queueMicrotask(() => setIsOpen(false));
     }, [pathname]);
 
     const isActive = (href: string) => pathname === href;

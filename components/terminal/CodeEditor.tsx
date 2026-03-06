@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play } from "lucide-react";
 
@@ -15,7 +15,8 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ className = "" }) => {
   const [isCompiling, setIsCompiling] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
 
-  const codeLines = [
+  const codeLines = useMemo(
+    () => [
     "import React from 'react';",
     "",
     "const AboutJohn = () => {",
@@ -56,7 +57,9 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ className = "" }) => {
     "};",
     "",
     "export default AboutJohn;",
-  ];
+    ],
+    [],
+  );
 
   // Typing animation
   useEffect(() => {
