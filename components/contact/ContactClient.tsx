@@ -79,7 +79,7 @@ const ContactClient = () => {
     {
       icon: Phone,
       title: "Write Me (Whatsapp)",
-      value: "++1234567890",
+      value: "+1234567890",
       link: "https://wa.me/+1234567890",
     },
     {
@@ -103,12 +103,12 @@ const ContactClient = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
-            Initier le Contact
+            Initiate Contact
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Vous avez un projet nécessitant une architecture Backend solide ? Un
-            frontend moderne et puissant ? Discutons des spécifications
-            techniques et construisons ensemble un système fiable.
+            Do you have a project requiring a robust backend architecture? A
+            modern and powerful frontend? Let's discuss the technical
+            specifications and build a reliable system together.
           </p>
         </div>
 
@@ -116,11 +116,11 @@ const ContactClient = () => {
           <Card className="bg-gradient-card border-border-light shadow-card">
             <CardHeader>
               <CardTitle className="text-2xl text-text-primary">
-                Envoyer un Message Direct
+                Send a Direct Message
               </CardTitle>
               <p className="text-text-secondary">
-                Remplissez les champs ci-dessous. Toutes les demandes sont
-                traitées en priorité et une réponse structurée est garantie.
+                Fill out the fields below. All requests are prioritized, and a
+                structured response is guaranteed.
               </p>
             </CardHeader>
             <CardContent>
@@ -132,7 +132,7 @@ const ContactClient = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Votre Nom/Société"
+                      placeholder="Your Name/Company"
                       className="bg-input border-border-light"
                     />
                     <Input
@@ -141,7 +141,7 @@ const ContactClient = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="votre@email.com"
+                      placeholder="your@email.com"
                       className="bg-input border-border-light"
                     />
                   </div>
@@ -150,7 +150,7 @@ const ContactClient = () => {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="Sujet du projet ou de la demande"
+                    placeholder="Project or Request Subject"
                     className="bg-input border-border-light"
                   />
                   <Textarea
@@ -158,7 +158,7 @@ const ContactClient = () => {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Décrivez la portée de votre projet ou votre demande..."
+                    placeholder="Describe the scope of your project or request..."
                     rows={6}
                     className="bg-input border-border-light"
                   />
@@ -169,11 +169,11 @@ const ContactClient = () => {
                     className="w-full bg-gradient-primary hover:opacity-90 border-0 shadow-primary hover:shadow-glow transition-smooth"
                   >
                     {isSubmitting ? (
-                      "Traitement en cours..."
+                      "Processing..."
                     ) : (
                       <>
                         <Send className="mr-2 w-5 h-5" />
-                        Soumettre le Message
+                        Submit Message
                       </>
                     )}
                   </Button>
@@ -185,11 +185,11 @@ const ContactClient = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl font-bold text-text-primary mb-6">
-                Protocoles de Contact
+                Contact Protocols
               </h2>
               <p className="text-text-secondary text-lg mb-8">
-                Le contact direct est le bienvenu. La latence de réponse
-                standard est de 24 heures, souvent moins.
+                Direct contact is welcome. The standard response latency is 24
+                hours, often less.
               </p>
             </div>
             <AppearOnScroll>

@@ -99,7 +99,7 @@ const ContactForm = () => {
     {
       icon: Phone,
       title: "Direct Line (WhatsApp)",
-      value: "++1234567890",
+      value: "+1234567890",
       link: "https://wa.me/+1234567890",
     },
     {

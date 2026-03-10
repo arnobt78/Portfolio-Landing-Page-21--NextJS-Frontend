@@ -10,7 +10,16 @@ A **full-featured portfolio and landing page** built with the Next.js App Router
 
 - **Live Demo:** [https://portfolio-ui-21.vercel.app/](https://portfolio-ui-21.vercel.app/)
 
-<img width="1777" height="895" alt="Screenshot 2026-03-10 at 12 49 42" src="https://github.com/user-attachments/assets/08724dad-4047-441e-acff-eeb30173f3a3" /> <img width="1812" height="879" alt="Screenshot 2026-03-10 at 12 50 17" src="https://github.com/user-attachments/assets/faa1262d-69bc-4ed3-8c6d-27de3128e457" /> <img width="1778" height="824" alt="Screenshot 2026-03-10 at 12 50 38" src="https://github.com/user-attachments/assets/045f62f8-e081-4194-8050-7da28e7b28a6" /> <img width="1658" height="675" alt="Screenshot 2026-03-10 at 12 50 57" src="https://github.com/user-attachments/assets/e7b11592-475b-4046-b553-ab792f58353a" /> <img width="1596" height="746" alt="Screenshot 2026-03-10 at 12 51 08" src="https://github.com/user-attachments/assets/c329477c-c6e2-4b3d-bb4a-4ec81445ffed" /> <img width="1520" height="808" alt="Screenshot 2026-03-10 at 12 51 18" src="https://github.com/user-attachments/assets/a843057d-2e6b-4eec-9b5e-d88f908fb40d" /> <img width="1631" height="802" alt="Screenshot 2026-03-10 at 12 51 27" src="https://github.com/user-attachments/assets/ddc42100-937b-4876-b254-8900492008a4" /> <img width="1735" height="921" alt="Screenshot 2026-03-10 at 12 51 39" src="https://github.com/user-attachments/assets/38850402-266e-4499-b8fc-0aa7b28c1a00" /> <img width="1694" height="926" alt="Screenshot 2026-03-10 at 12 51 55" src="https://github.com/user-attachments/assets/1d04297d-fa3b-40de-97df-b3501a875822" /> <img width="1592" height="891" alt="Screenshot 2026-03-10 at 12 52 07" src="https://github.com/user-attachments/assets/422bfc39-5680-4b10-8f33-821710631b8a" />
+![Screenshot 2026-03-10 at 12 49 42](https://github.com/user-attachments/assets/08724dad-4047-441e-acff-eeb30173f3a3)
+![Screenshot 2026-03-10 at 12 50 17](https://github.com/user-attachments/assets/faa1262d-69bc-4ed3-8c6d-27de3128e457)
+![Screenshot 2026-03-10 at 12 50 38](https://github.com/user-attachments/assets/045f62f8-e081-4194-8050-7da28e7b28a6)
+![Screenshot 2026-03-10 at 12 50 57](https://github.com/user-attachments/assets/e7b11592-475b-4046-b553-ab792f58353a)
+![Screenshot 2026-03-10 at 12 51 08](https://github.com/user-attachments/assets/c329477c-c6e2-4b3d-bb4a-4ec81445ffed)
+![Screenshot 2026-03-10 at 12 51 18](https://github.com/user-attachments/assets/a843057d-2e6b-4eec-9b5e-d88f908fb40d)
+![Screenshot 2026-03-10 at 12 51 27](https://github.com/user-attachments/assets/ddc42100-937b-4876-b254-8900492008a4)
+![Screenshot 2026-03-10 at 12 51 39](https://github.com/user-attachments/assets/38850402-266e-4499-b8fc-0aa7b28c1a00)
+![Screenshot 2026-03-10 at 12 51 55](https://github.com/user-attachments/assets/1d04297d-fa3b-40de-97df-b3501a875822)
+![Screenshot 2026-03-10 at 12 52 07](https://github.com/user-attachments/assets/422bfc39-5680-4b10-8f33-821710631b8a)
 
 ## Table of Contents
 
